@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عيد ميلاد Toto 🌷</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, Tahoma, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(255,255,255,.8) 0 4%, transparent 5%),
+        radial-gradient(circle at 85% 20%, rgba(255,255,255,.7) 0 3%, transparent 4%),
+        linear-gradient(135deg, #ffb6d5, #ff6fa8, #ff9ac5);
+    color: #6d2850;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    opacity: .8;
+    animation: twinkle 2s infinite alternate;
+}
+
+.star:nth-child(1) {
+    top: 8%;
+    left: 12%;
+}
+
+.star:nth-child(2) {
+    top: 18%;
+    right: 14%;
+}
+
+.star:nth-child(3) {
+    top: 55%;
+    left: 7%;
+}
+
+.star:nth-child(4) {
+    top: 72%;
+    right: 8%;
+}
+
+.star:nth-child(5) {
+    top: 38%;
+    left: 88%;
+}
+
+@keyframes twinkle {
+    from {
+        transform: scale(.7);
+        opacity: .35;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.balloon {
+    position: absolute;
+    width: 55px;
+    height: 70px;
+    border-radius: 50% 50% 45% 45%;
+    background: #ff4f91;
+    box-shadow: inset -8px -8px 15px rgba(0,0,0,.12);
+    animation: floatBalloon 5s ease-in-out infinite;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 70px;
+    background: rgba(100,40,70,.45);
+    top: 68px;
+    left: 50%;
+}
+
+.balloon::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4f91;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.balloon:nth-of-type(1) {
+    top: 7%;
+    left: 5%;
+}
+
+.balloon:nth-of-type(2) {
+    top: 14%;
+    right: 5%;
+    background: #ffd166;
+    animation-delay: 1s;
+}
+
+.balloon:nth-of-type(3) {
+    top: 68%;
+    left: 3%;
+    background: #c77dff;
+    animation-delay: 2s;
+}
+
+.balloon:nth-of-type(4) {
+    top: 75%;
+    right: 4%;
+    background: #ff7eb6;
+    animation-delay: 1.5s;
+}
+
+@keyframes floatBalloon {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+    50% {
+        transform: translateY(-18px) rotate(3deg);
+    }
+}
+
+.heart {
+    position: absolute;
+    font-size: 25px;
+    animation: heartFloat 4s ease-in-out infinite;
+}
+
+.heart:nth-of-type(5) {
+    top: 30%;
+    left: 10%;
+}
+
+.heart:nth-of-type(6) {
+    top: 45%;
+    right: 8%;
+    animation-delay: 1s;
+}
+
+.heart:nth-of-type(7) {
+    top: 82%;
+    left: 45%;
+    animation-delay: 2s;
+}
+
+@keyframes heartFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.app {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding: 75px 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: min(94vw, 470px);
+    min-height: 560px;
+    padding: 25px 18px;
+    border-radius: 32px;
+    background: rgba(255,255,255,.86);
+    box-shadow: 0 20px 60px rgba(120,20,70,.25);
+    backdrop-filter: blur(10px);
+}
+
+.slides {
+    width: 100%;
+}
+
+.slide {
+    display: none;
+    text-align: center;
+    min-height: 500px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.slide-title {
+    margin: 5px 0 18px;
+    color: #d83d7d;
+    font-size: 28px;
+    line-height: 1.5;
+}
+
+.slide-text {
+    margin: 0 auto;
+    max-width: 390px;
+    color: #70405a;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.dua-box {
+    width: 100%;
+    padding: 20px 12px;
+    border-radius: 25px;
+    background: rgba(255,225,238,.65);
+}
+
+.cake-placeholder {
+    margin-top: 25px;
+    font-size: 110px;
+}
+
+@media (max-width: 380px) {
+    .card {
+        min-height: 530px;
+        padding: 20px 13px;
+    }
+
+    .slide {
+        min-height: 475px;
+    }
+
+    .slide-title {
+        font-size: 24px;
+    }
+
+    .slide-text {
+        font-size: 16px;
+    }
+
+    .balloon {
+        width: 45px;
+        height: 58px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="star">✦</div>
+    <div class="star">✧</div>
+    <div class="star">✦</div>
+    <div class="star">✧</div>
+    <div class="star">✦</div>
+
+    <div class="balloon">Toto</div>
+    <div class="balloon"></div>
+    <div class="balloon">Toto</div>
+    <div class="balloon"></div>
+
+    <div class="heart">♥</div>
+    <div class="heart">♥</div>
+    <div class="heart">♥</div>
+</div>
+
+<div class="app">
+
+    <div class="card">
+
+        <div class="slides">
+        <section class="slide active">
+
+    <div class="slide-icon">🎂</div>
+
+    <h1 class="slide-title">
+        كل عام وأنتِ بخير يا Toto 🤍
+    </h1>
+
+    <p class="slide-text">
+        في يوم ميلادك أتمنى لكِ أيامًا جميلة،
+        مليئة بالفرح والطمأنينة وراحة البال،
+        وأن تكون سنتك الجديدة أجمل من كل سنة مضت 🌷
+    </p>
+
+</section>
+
+<section class="slide">
+
+    <div class="slide-icon">🌸</div>
+
+    <h2 class="slide-title">
+        أمنية بالتوفيق ✨
+    </h2>
+
+    <div class="dua-box">
+
+        <p class="slide-text">
+            أسأل الله أن يوفقكِ في كل خطوة،
+            وينور لكِ طريقك،
+            ويفتح لكِ أبواب الخير والرزق،
+            ويكتب لكِ التوفيق في كل ما تتمنين 🤲🏻
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide">
+
+    <div class="slide-icon">🕊️</div>
+
+    <h2 class="slide-title">
+        راحة بال وسعادة
+    </h2>
+
+    <div class="dua-box">
+
+        <p class="slide-text">
+            اللهم ارزقها راحة البال،
+            وطمأنينة القلب،
+            وفرحة لا تزول،
+            وأيامًا هادئة وجميلة،
+            وأبعد عنها كل حزن وتعب 🌿
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide">
+
+    <div class="slide-icon">🌹</div>
+
+    <h2 class="slide-title">
+        للمستقبل الجميل
+    </h2>
+
+    <div class="dua-box">
+
+        <p class="slide-text">
+            الله يكتب لكِ مستقبلًا جميلًا،
+            ويرزقكِ فيه ما تتمنين،
+            ويجمع لكِ بين الخير والسعادة،
+            وينور دربكِ في كل طريق ✨
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide">
+
+    <div class="slide-icon">🎂</div>
+
+    <h2 class="slide-title">
+        حان وقت الكيكة!
+    </h2>
+
+    <p class="slide-text">
+        طبعًا ما يصير عيد ميلاد
+        بدون كيكة جميلة 🎉
+    </p>
+
+    <div class="cake-placeholder">
+        🎂
+    </div>
+
+</section>
+
+<section class="slide">
+
+    <div class="slide-icon">💐</div>
+
+    <h2 class="slide-title">
+        أمنيات كثيرة لكِ
+    </h2>
+
+    <div class="dua-box">
+
+        <p class="slide-text">
+            أتمنى أن تحمل لكِ الأيام القادمة
+            أخبارًا تفرح القلب،
+            ولحظات جميلة تستحق أن تبقى
+            في الذاكرة،
+            وأن يرزقكِ الله فوق ما تتمنين 🤍
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide">
+
+    <div class="slide-icon">🎉</div>
+
+    <h2 class="slide-title">
+        كل عام وأنتِ بخير 🤍
+    </h2>
+
+    <p class="slide-text">
+        أسأل الله أن يطيل عمركِ في الخير والطاعة،
+        ويحفظكِ من كل سوء،
+        ويسعدكِ في حياتك،
+        ويجعل القادم من عمركِ أجمل وأجمل 🌷
+    </p>
+
+</section>
+<style>
+.cake-placeholder {
+    width: 230px;
+    height: 205px;
+    margin: 20px auto 5px;
+    position: relative;
+}
+
+.cake-plate {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 20px;
+    background: linear-gradient(#fff, #f2c9dc);
+    border-radius: 50%;
+    box-shadow: 0 7px 15px rgba(90,30,60,.18);
+}
+
+.cake {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 190px;
+    height: 88px;
+    border-radius: 12px 12px 24px 24px;
+    background:
+        linear-gradient(to bottom, #fff9fc 0 22%, #f8b5d0 23% 48%, #fff0f7 49% 100%);
+    box-shadow:
+        0 8px 15px rgba(120,30,70,.18),
+        inset 0 -8px 0 rgba(220,80,140,.12);
+}
+
+.cake-top {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 190px;
+    height: 48px;
+    background: #fffaff;
+    border-radius: 50%;
+    box-shadow: 0 5px 0 #f3b0cd;
+}
+
+.cake-name {
+    position: absolute;
+    top: 17px;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    text-align: center;
+    color: #d83d7d;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Georgia, serif;
+}
+
+.cake-decoration {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    letter-spacing: 8px;
+}
+
+.candle {
+    position: absolute;
+    bottom: 86px;
+    width: 10px;
+    height: 43px;
+    border-radius: 5px;
+    background: repeating-linear-gradient(
+        45deg,
+        #ff6fa8 0 6px,
+        #ffffff 6px 12px
+    );
+    z-index: 8;
+}
+
+.candle-one {
+    left: 68px;
+}
+
+.candle-two {
+    left: 90px;
+}
+
+.candle-three {
+    left: 112px;
+}
+
+.flame {
+    position: absolute;
+    width: 15px;
+    height: 23px;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50% 50% 50% 50%;
+    background: #ffb300;
+    box-shadow: 0 0 12px #ff9800;
+    animation: flameMove .65s ease-in-out infinite alternate;
+}
+
+@keyframes flameMove {
+    from {
+        transform: translateX(-50%) scale(1) rotate(-3deg);
+    }
+
+    to {
+        transform: translateX(-50%) scale(1.15) rotate(3deg);
+    }
+}
+
+.cake-message {
+    margin-top: 3px;
+    color: #d83d7d;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: bold;
+}
+</style>
+
+<script>
+document.querySelector(".cake-placeholder").innerHTML = `
+    <div class="cake-plate"></div>
+
+    <div class="cake">
+
+        <div class="cake-top"></div>
+
+        <div class="cake-name">
+            Toto
+        </div>
+
+        <div class="cake-decoration">
+            🌷 🌸 🌷
+        </div>
+
+    </div>
+
+    <div class="candle candle-one">
+        <div class="flame"></div>
+    </div>
+
+    <div class="candle candle-two">
+        <div class="flame"></div>
+    </div>
+
+    <div class="candle candle-three">
+        <div class="flame"></div>
+    </div>
+`;
+
+const cakeSlide = document.querySelectorAll(".slide")[4];
+
+const cakeMessage = document.createElement("div");
+
+cakeMessage.className = "cake-message";
+
+cakeMessage.innerHTML = `
+    كل عام وانتي بالف خير 🤍<br>
+    وأحلا كيكة عيد ميلاد 🎂<br>
+    لأحلا تولين 🌷
+`;
+
+cakeSlide.appendChild(cakeMessage);
+</script>
+<style>
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.nav-btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    background: #ffffff;
+    color: #d83d7d;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0,0,0,.15);
+    cursor: pointer;
+}
+
+.nav-btn:active {
+    transform: scale(.94);
+}
+
+.progress {
+    text-align: center;
+    margin-top: 10px;
+    color: #c34b7a;
+    font-size: 13px;
+}
+
+.confetti-piece {
+    position: fixed;
+    top: -20px;
+    width: 8px;
+    height: 14px;
+    z-index: 9999;
+    pointer-events: none;
+    animation: confettiFall 1.5s linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.slide.active {
+    animation: slideAppear .65s ease;
+}
+
+@keyframes slideAppear {
+    from {
+        opacity: 0;
+        transform: translateX(35px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.blow-btn {
+    border: none;
+    margin-top: 10px;
+    padding: 12px 22px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #ff5798, #e83c7b);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(220,50,120,.25);
+    cursor: pointer;
+}
+
+.blow-btn:active {
+    transform: scale(.94);
+}
+
+.blow-message {
+    color: #c83b72;
+    font-size: 14px;
+    margin: 8px 0 0;
+}
+
+.flame.off {
+    animation: extinguish .65s ease forwards;
+}
+
+@keyframes extinguish {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    45% {
+        opacity: .7;
+        transform: translateX(-50%) scale(1.35);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) scale(.1);
+    }
+}
+</style>
+
+<div class="navigation">
+
+    <button id="prevBtn" class="nav-btn">
+        السابق
+    </button>
+
+    <button id="nextBtn" class="nav-btn">
+        التالي ✨
+    </button>
+
+</div>
+
+<div class="progress" id="progress">
+    1 / 7
+</div>
+
+<div id="confetti"></div>
+
+<script>
+const slides = document.querySelectorAll(".slide");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const progress = document.getElementById("progress");
+
+let currentSlide = 0;
+
+function makeConfetti() {
+
+    const container = document.getElementById("confetti");
+
+    for (let i = 0; i < 32; i++) {
+
+        const piece = document.createElement("div");
+
+        piece.className = "confetti-piece";
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.background = [
+            "#ff4f91",
+            "#ffd166",
+            "#9b5de5",
+            "#4cc9f0",
+            "#ffffff"
+        ][Math.floor(Math.random() * 5)];
+
+        piece.style.animationDelay =
+            Math.random() * .3 + "s";
+
+        container.appendChild(piece);
+
+        setTimeout(function() {
+            piece.remove();
+        }, 1800);
+    }
+}
+
+function showSlide(index) {
+
+    if (index < 0) {
+        index = 0;
+    }
+
+    if (index >= slides.length) {
+        index = slides.length - 1;
+    }
+
+    slides.forEach(function(slide) {
+        slide.classList.remove("active");
+    });
+
+    slides[index].classList.add("active");
+
+    currentSlide = index;
+
+    prevBtn.style.visibility =
+        currentSlide === 0 ? "hidden" : "visible";
+
+    progress.textContent =
+        (currentSlide + 1) + " / " + slides.length;
+
+    if (currentSlide === 0) {
+        nextBtn.textContent = "نبدأ؟ 🌷";
+    } else if (currentSlide === 1) {
+        nextBtn.textContent = "دعوة جميلة 🤲🏻";
+    } else if (currentSlide === 2) {
+        nextBtn.textContent = "راحة البال 🌸";
+    } else if (currentSlide === 3) {
+        nextBtn.textContent = "للمستقبل ✨";
+    } else if (currentSlide === 4) {
+        nextBtn.textContent = "شوفي الكيكة 🎂";
+    } else if (currentSlide === 5) {
+        nextBtn.textContent = "أمنية أخيرة 💐";
+    } else {
+        nextBtn.textContent = "النهاية 🌷";
+    }
+
+    makeConfetti();
+}
+
+nextBtn.addEventListener("click", function() {
+
+    if (currentSlide < slides.length - 1) {
+        showSlide(currentSlide + 1);
+    }
+
+});
+
+prevBtn.addEventListener("click", function() {
+
+    if (currentSlide > 0) {
+        showSlide(currentSlide - 1);
+    }
+
+});
+
+showSlide(0);
+</script>
+<style>
+.candle.off .flame {
+    animation: extinguish .7s ease forwards;
+}
+
+@keyframes extinguish {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    35% {
+        opacity: .8;
+        transform: translateX(-50%) scale(1.35);
+    }
+
+    70% {
+        opacity: .35;
+        transform: translateX(-50%) scale(.8);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) scale(.1);
+    }
+}
+
+.blow-btn {
+    display: block;
+    margin: 15px auto 5px;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff5798, #e83c7b);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 7px 17px rgba(220,50,120,.25);
+    cursor: pointer;
+}
+
+.blow-btn:active {
+    transform: scale(.94);
+}
+
+.blow-message {
+    margin: 8px 0 0;
+    color: #c83b72;
+    font-size: 14px;
+    line-height: 1.7;
+}
+</style>
+
+<script>
+const cakeSlide = document.querySelectorAll(".slide")[4];
+
+const blowBtn = document.createElement("button");
+
+blowBtn.className = "blow-btn";
+blowBtn.textContent = "أطفئي الشموع 🕯️";
+
+cakeSlide.appendChild(blowBtn);
+
+const blowMessage = document.createElement("p");
+
+blowMessage.className = "blow-message";
+
+blowMessage.textContent =
+    "تمني أمنية جميلة قبل إطفاء الشموع 🤍";
+
+cakeSlide.appendChild(blowMessage);
+
+blowBtn.addEventListener("click", function() {
+
+    const candles = cakeSlide.querySelectorAll(".candle");
+
+    candles.forEach(function(candle) {
+        candle.classList.add("off");
+    });
+
+    blowBtn.textContent = "انطفأت الشموع ✨";
+
+    blowMessage.textContent =
+        "الله يحقق لكِ كل أمنية جميلة في قلبكِ 🤍";
+
+    makeConfetti();
+
+    blowBtn.disabled = true;
+});
+</script>
+<style>
+.surprise-btn {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 10000;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 25px;
+    background: white;
+    color: #d83d7d;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,.18);
+    cursor: pointer;
+}
+
+.surprise-btn:active {
+    transform: scale(.93);
+}
+
+.surprise-box {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(190,40,100,.48);
+    backdrop-filter: blur(7px);
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    z-index: 20000;
+    padding: 20px;
+}
+
+.surprise-box.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.surprise-content {
+    width: min(90%, 380px);
+    background: white;
+    border-radius: 30px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    transform: scale(.7) rotate(-3deg);
+    transition: .5s;
+}
+
+.surprise-box.show .surprise-content {
+    transform: scale(1) rotate(0);
+}
+
+.surprise-flower {
+    font-size: 58px;
+    margin-bottom: 8px;
+}
+
+.surprise-content h2 {
+    color: #d83d7d;
+    font-size: 28px;
+    margin: 10px 0 15px;
+}
+
+.surprise-content p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+#closeSurprise {
+    border: none;
+    padding: 11px 25px;
+    border-radius: 25px;
+    background: #ff5b9d;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#closeSurprise:active {
+    transform: scale(.94);
+}
+</style>
+
+<button class="surprise-btn" id="surpriseBtn">
+    اضغط هنا 🙂
+</button>
+
+<div class="surprise-box" id="surpriseBox">
+
+    <div class="surprise-content">
+
+        <div class="surprise-flower">
+            🌹
+        </div>
+
+        <h2>
+            انبسطي يا الخاله 🌹
+        </h2>
+
+        <p>
+            وكل عام وأنتِ بخير،
+            وعسى أيامك القادمة تكون
+            أجمل وأسعد وأحلى من كل أمنياتك 🤍
+        </p>
+
+        <button id="closeSurprise">
+            إغلاق ✨
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+const surpriseBtn = document.getElementById("surpriseBtn");
+const surpriseBox = document.getElementById("surpriseBox");
+const closeSurprise = document.getElementById("closeSurprise");
+
+surpriseBtn.addEventListener("click", function() {
+
+    surpriseBox.classList.add("show");
+
+    makeConfetti();
+
+});
+
+closeSurprise.addEventListener("click", function() {
+
+    surpriseBox.classList.remove("show");
+
+});
+
+surpriseBox.addEventListener("click", function(event) {
+
+    if (event.target === surpriseBox) {
+        surpriseBox.classList.remove("show");
+    }
+
+});
+</script>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
