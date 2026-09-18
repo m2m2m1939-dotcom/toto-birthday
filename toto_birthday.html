@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>عيد ميلاد سعيد يا تولين 🎂</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Great+Vibes&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    min-height:100%;
+    font-family:Cairo,sans-serif;
+    background:#080512;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body{
+    background:
+    radial-gradient(
+        circle at 50% 15%,
+        rgba(255,113,180,.22),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 15% 80%,
+        rgba(125,87,255,.18),
+        transparent 28%
+    ),
+    linear-gradient(
+        145deg,
+        #07040e,
+        #17091e 55%,
+        #080512
+    );
+}
+
+/* النجوم */
+
+#stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:#fff;
+    opacity:.55;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    to{
+        opacity:.12;
+        transform:scale(.5);
+    }
+}
+
+/* الصفحات */
+
+.page{
+    position:relative;
+    z-index:2;
+    min-height:100vh;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:28px 18px;
+}
+
+.page.active{
+    display:flex;
+    animation:pageIn .75s ease both;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(28px) scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+/* البطاقة الرئيسية */
+
+.card{
+    width:min(940px,100%);
+    min-height:610px;
+    padding:42px 25px;
+
+    border:1px solid rgba(255,255,255,.14);
+
+    border-radius:34px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.025)
+    );
+
+    box-shadow:
+    0 25px 90px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.1);
+
+    backdrop-filter:blur(18px);
+
+    text-align:center;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.card:before{
+    content:"";
+    position:absolute;
+    inset:-40%;
+
+    background:
+    conic-gradient(
+        from 0deg,
+        transparent 0 30%,
+        rgba(255,166,211,.09),
+        transparent 48% 100%
+    );
+
+    animation:spin 14s linear infinite;
+}
+
+.card>*{
+    position:relative;
+    z-index:1;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* العناوين */
+
+.kicker{
+    font-size:13px;
+    letter-spacing:4px;
+    color:#ffc3e1;
+    text-transform:uppercase;
+}
+
+h1{
+    font-size:clamp(34px,8vw,70px);
+    margin:12px 0 4px;
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #ffc2df,
+        #fff
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.script{
+    font-family:"Great Vibes",cursive;
+    font-size:clamp(45px,10vw,82px);
+    color:#ffd3e8;
+}
+
+.sub{
+    max-width:650px;
+    margin:16px auto;
+    color:#e9dce8;
+    line-height:2;
+    font-size:16px;
+}
+
+/* الأزرار */
+
+.btn{
+    border:0;
+    color:#fff;
+
+    font:700 16px Cairo,sans-serif;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        #e84d96,
+        #8b55ff
+    );
+
+    box-shadow:
+    0 10px 35px rgba(216,63,137,.3);
+
+    transition:.25s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 16px 40px rgba(216,63,137,.42);
+}
+
+.btn:active{
+    transform:scale(.97);
+}
+
+.btn:after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        100deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:translateX(-120%);
+
+    animation:shine 3s infinite;
+}
+
+@keyframes shine{
+    55%,100%{
+        transform:translateX(120%);
+    }
+}
+
+.nav{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.small{
+    font-size:13px;
+    color:#bfaebf;
+    margin-top:14px;
+}
+
+/* زر النهاية في الزاوية */
+
+.cornerBtn{
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    z-index:5;
+
+    padding:9px 15px;
+
+    font-size:13px;
+
+    background:rgba(255,255,255,.09);
+
+    box-shadow:none;
+
+    border:1px solid rgba(255,255,255,.14);
+}
+
+/* البالونات */
+
+.balloonField{
+    height:250px;
+    position:relative;
+    margin:0 auto 5px;
+    max-width:700px;
+}
+
+.balloon{
+    position:absolute;
+
+    width:72px;
+    height:88px;
+
+    border-radius:50% 50% 45% 45%;
+
+    filter:
+    drop-shadow(
+        0 15px 15px rgba(0,0,0,.3)
+    );
+
+    animation:
+    float 4s ease-in-out infinite;
+}
+
+.balloon:before{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-73px;
+
+    width:1px;
+    height:78px;
+
+    background:rgba(255,255,255,.3);
+}
+
+.balloon:after{
+    content:"";
+
+    position:absolute;
+
+    bottom:-5px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border:5px solid transparent;
+
+    border-top-color:currentColor;
+}
+
+.b1{
+    left:5%;
+    top:65px;
+
+    background:#e85b9d;
+    color:#e85b9d;
+
+    animation-delay:-.5s;
+}
+
+.b2{
+    left:18%;
+    top:20px;
+
+    background:#8d6cff;
+    color:#8d6cff;
+
+    animation-delay:-1.4s;
+}
+
+.b3{
+    right:18%;
+    top:30px;
+
+    background:#f3b85d;
+    color:#f3b85d;
+
+    animation-delay:-2.2s;
+}
+
+.b4{
+    right:5%;
+    top:75px;
+
+    background:#55bde8;
+    color:#55bde8;
+
+    animation-delay:-3s;
+}
+
+.b5{
+    left:45%;
+    top:0;
+
+    background:#f07bb8;
+    color:#f07bb8;
+
+    animation-delay:-1s;
+}
+
+@keyframes float{
+    50%{
+        transform:
+        translateY(-18px)
+        rotate(3deg);
+    }
+}
+/* الكيكة */
+
+.cakeWrap{
+    height:330px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.cake{
+    position:relative;
+
+    width:300px;
+    height:230px;
+
+    filter:
+    drop-shadow(
+        0 25px 25px rgba(0,0,0,.45)
+    );
+}
+
+/* صحن الكيكة */
+
+.plate{
+    position:absolute;
+
+    bottom:0;
+    left:0;
+    right:0;
+
+    margin:auto;
+
+    width:330px;
+    height:28px;
+
+    background:
+    linear-gradient(
+        #f5e7ee,
+        #b9a6b4
+    );
+
+    border-radius:50%;
+
+    box-shadow:
+    0 8px 15px #0006;
+}
+
+/* طبقة الكيك */
+
+.tier{
+    position:absolute;
+
+    left:20px;
+
+    width:260px;
+    height:95px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #8e214f,
+        #e96b9b 45%,
+        #9d2758
+    );
+
+    border-radius:
+    18px 18px 25px 25px;
+
+    bottom:30px;
+
+    box-shadow:
+    inset 0 9px 12px #ffffff33;
+}
+
+/* طبقة الكريمة العلوية */
+
+.tier:before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    top:-14px;
+
+    height:30px;
+
+    background:#ffe6f1;
+
+    border-radius:50%;
+
+    box-shadow:
+    inset 0 -6px 8px #d98cae;
+}
+
+/* الكريمة */
+
+.icing{
+    position:absolute;
+
+    left:32px;
+    top:104px;
+
+    width:236px;
+    height:48px;
+
+    background:#fff0f6;
+
+    border-radius:
+    0 0 28px 28px;
+
+    z-index:2;
+
+    box-shadow:
+    inset 0 -8px 10px #e6a5bd;
+}
+
+.icing:before,
+.icing:after{
+    content:"";
+
+    position:absolute;
+
+    background:#fff0f6;
+
+    border-radius:
+    0 0 18px 18px;
+
+    width:25px;
+    height:34px;
+
+    top:24px;
+}
+
+.icing:before{
+    left:55px;
+}
+
+.icing:after{
+    right:50px;
+}
+
+/* كلمة Toto على الكيكة */
+
+.name{
+    position:absolute;
+
+    z-index:4;
+
+    top:142px;
+
+    left:0;
+    right:0;
+
+    font-family:
+    "Great Vibes",
+    cursive;
+
+    font-size:42px;
+
+    color:#7d1f4c;
+
+    text-shadow:
+    0 1px #fff;
+}
+
+/* الشموع */
+
+.candle{
+    position:absolute;
+
+    z-index:5;
+
+    bottom:151px;
+
+    width:12px;
+    height:58px;
+
+    border-radius:5px;
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        #fff 0 7px,
+        #e86c9c 7px 12px
+    );
+}
+
+.c1{
+    left:95px;
+}
+
+.c2{
+    left:144px;
+}
+
+.c3{
+    left:193px;
+}
+
+/* اللهب */
+
+.flame{
+    position:absolute;
+
+    width:17px;
+    height:25px;
+
+    top:-27px;
+    left:-2px;
+
+    border-radius:
+    50% 50% 45% 45%;
+
+    background:
+    radial-gradient(
+        circle at 50% 70%,
+        #fff 0 25%,
+        #ffd34e 28% 60%,
+        #ff7a30 62%
+    );
+
+    animation:
+    flicker .15s infinite alternate;
+
+    transform-origin:bottom;
+}
+
+@keyframes flicker{
+    to{
+        transform:
+        scale(1.12,.9)
+        rotate(3deg);
+    }
+}
+
+/* عند إطفاء الشمعة */
+
+.candle.off .flame{
+    display:none;
+}
+
+/* الدخان */
+
+.smoke{
+    position:absolute;
+
+    display:none;
+
+    width:4px;
+    height:50px;
+
+    background:
+    linear-gradient(
+        transparent,
+        #bbb9
+    );
+
+    border-radius:50%;
+
+    top:-62px;
+    left:4px;
+
+    filter:blur(2px);
+
+    animation:
+    smoke 2.2s ease-out;
+}
+
+.candle.off .smoke{
+    display:block;
+}
+
+@keyframes smoke{
+    to{
+        transform:
+        translate(-10px,-35px)
+        scale(2);
+
+        opacity:0;
+    }
+}
+
+/* الورود */
+
+.roseRow{
+    font-size:30px;
+
+    letter-spacing:7px;
+
+    margin:
+    5px 0 14px;
+
+    animation:
+    rose 3s ease-in-out infinite;
+}
+
+@keyframes rose{
+    50%{
+        transform:
+        translateY(-5px);
+    }
+}
+
+/* الدعاء */
+
+.dua{
+    max-width:760px;
+
+    margin:0 auto;
+
+    color:#f3e8f0;
+
+    font-size:17px;
+
+    line-height:2.15;
+
+    background:
+    rgba(255,255,255,.045);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:24px;
+
+    padding:22px;
+}
+
+.quote{
+    font-size:19px;
+
+    color:#ffd1e5;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+}
+
+/* الرسالة */
+
+.message{
+    font-size:21px;
+
+    line-height:2.1;
+
+    color:#f7eaf1;
+
+    margin:
+    18px auto;
+
+    max-width:760px;
+}
+
+/* التوقيع */
+
+.signature{
+    margin-top:32px;
+
+    color:#d7c6d4;
+
+    font-size:14px;
+}
+
+.signature strong{
+    font-size:24px;
+
+    color:#fff;
+}
+
+/* المؤثرات المتساقطة */
+
+.confetti{
+    position:fixed;
+
+    top:-20px;
+
+    width:9px;
+    height:16px;
+
+    z-index:20;
+
+    animation:
+    fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+        opacity:.1;
+    }
+}
+
+.hidden{
+    display:none !important;
+}
+
+/* الجوال */
+
+@media(max-width:500px){
+
+    .card{
+        min-height:620px;
+
+        padding:
+        34px 16px;
+
+        border-radius:26px;
+    }
+
+    .balloon{
+        transform:scale(.75);
+    }
+
+    .b1{
+        left:-2%;
+    }
+
+    .b4{
+        right:-2%;
+    }
+
+    .cake{
+        transform:scale(.83);
+    }
+
+    .cakeWrap{
+        height:285px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- خلفية النجوم -->
+<div id="stars"></div>
+
+
+<!-- ========================= -->
+<!-- الصفحة الأولى -->
+<!-- ========================= -->
+
+<section class="page active" id="p1">
+
+    <div class="card">
+
+        <div class="kicker">
+            A LITTLE BIRTHDAY SURPRISE
+        </div>
+
+        <h1>
+            عيد ميلاد سعيد
+        </h1>
+
+        <div class="script">
+            يا تولين
+        </div>
+
+        <p class="sub">
+            اليوم مو يوم عادي…
+            اليوم يوم جميل لأن فيه ذكرى ميلاد
+            إنسانة تستحق لها أجمل الأمنيات 🌷
+        </p>
+
+        <button class="btn" onclick="go(2)">
+            ابدئي المفاجأة ✨
+        </button>
+
+        <div class="small">
+            اضغطي واستكشفي العرض خطوة بخطوة
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- الصفحة الثانية -->
+<!-- ========================= -->
+
+<section class="page" id="p2">
+
+    <div class="card">
+
+        <div class="kicker">
+            BIRTHDAY WISHES
+        </div>
+
+
+        <!-- البالونات -->
+
+        <div class="balloonField">
+
+            <div class="balloon b1"></div>
+
+            <div class="balloon b2"></div>
+
+            <div class="balloon b3"></div>
+
+            <div class="balloon b4"></div>
+
+            <div class="balloon b5"></div>
+
+        </div>
+
+
+        <h1 style="font-size:38px">
+            كل عام وأنتِ بخير 🎈
+        </h1>
+
+
+        <p class="message">
+
+            أتمنى لكِ سنة جديدة مليئة بالفرح،
+            والنجاحات، واللحظات التي تخلّي القلب
+            يبتسم من غير سبب.
+
+        </p>
+
+
+        <div class="nav">
+
+            <button
+                class="btn"
+                onclick="go(3)"
+            >
+                شوفي الكيكة 🎂
+            </button>
+
+
+            <button
+                class="btn"
+                onclick="go(1)"
+                style="
+                    background:rgba(255,255,255,.08);
+                    box-shadow:none;
+                "
+            >
+                رجوع
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- الصفحة الثالثة: الكيكة -->
+<!-- ========================= -->
+
+<section class="page" id="p3">
+
+    <div class="card">
+
+        <div class="kicker">
+            A CAKE MADE FOR YOU
+        </div>
+
+
+        <!-- الورود -->
+
+        <div class="roseRow">
+            🌹 🌷 🌹 🌷 🌹
+        </div>
+
+
+        <!-- الكيكة -->
+
+        <div class="cakeWrap">
+
+            <div class="cake">
+
+                <div class="plate"></div>
+
+                <div class="tier"></div>
+
+                <div class="icing"></div>
+
+
+                <!-- اسم Toto -->
+
+                <div class="name">
+                    Toto
+                </div>
+
+
+                <!-- الشموع -->
+
+                <div class="candle c1">
+
+                    <div class="flame"></div>
+
+                    <div class="smoke"></div>
+
+                </div>
+
+
+                <div class="candle c2">
+
+                    <div class="flame"></div>
+
+                    <div class="smoke"></div>
+
+                </div>
+
+
+                <div class="candle c3">
+
+                    <div class="flame"></div>
+
+                    <div class="smoke"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- الكتابة فوق الكيكة -->
+
+        <h2
+            style="
+                margin:-3px 0 8px;
+                color:#ffd4e7;
+            "
+        >
+            أحلا كيكه لأحلا تولين
+        </h2>
+
+
+        <p
+            class="sub"
+            style="margin-top:4px"
+        >
+            خذي نفسًا…
+            وتمنّي أمنية جميلة،
+            ثم اضغطي لإطفاء الشموع 🕯️
+        </p>
+
+
+        <!-- زر إطفاء الشموع -->
+
+        <button
+            class="btn"
+            id="blow"
+            onclick="blowCandles()"
+        >
+            أطفئ الشموع 🕯️
+        </button>
+
+
+        <div class="nav">
+
+            <button
+                class="btn hidden"
+                id="next3"
+                onclick="go(4)"
+            >
+                كمّلي الدعاء 🤍
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- الصفحة الرابعة: الدعاء -->
+<!-- ========================= -->
+
+<section class="page" id="p4">
+
+    <div class="card">
+
+        <div class="kicker">
+            A SINCERE PRAYER
+        </div>
+
+
+        <h1 style="font-size:38px">
+            دعاء من القلب 🤍
+        </h1>
+
+
+        <div class="dua">
+
+            <div class="quote">
+                اللهم في عامها الجديد…
+            </div>
+
+
+            اللهم وفّق تولين في حياتها،
+            واكتب لها الخير حيث كان،
+            وحقّق لها كل ما تتمنى مما فيه خير لها،
+            وافتح لها أبواب النجاح والسعادة،
+            وبارك لها في عمرها وصحتها وأيامها.
+
+
+            <br><br>
+
+
+            اللهم أطِل في عمرها على طاعتك ورضاك،
+            واجعل أيامها القادمة أجمل وأجمل،
+            واملأ قلبها طمأنينة وفرحًا،
+            وارزقها راحة البال،
+            وأزل عنها كل ضيقة وهم،
+            واجعل بعد كل تعب راحة،
+            وبعد كل حيرة هداية،
+            وبعد كل دعاء جميل إجابة أجمل.
+
+
+            <br><br>
+
+
+            اللهم اجعل عامها الجديد بداية لأيام
+            تليق بأمنياتها،
+            وقرّب إليها كل خير،
+            واصرف عنها كل سوء،
+            واكتب لها من الأقدار أجملها.
+
+        </div>
+
+
+        <div class="nav">
+
+            <button
+                class="btn"
+                onclick="go(5)"
+            >
+                آخر مفاجأة 🙂
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- الصفحة الخامسة: النهاية -->
+<!-- ========================= -->
+
+<section class="page" id="p5">
+
+    <div class="card">
+
+        <div class="kicker">
+            A LITTLE NOTE FROM ME
+        </div>
+
+
+        <h1 style="font-size:38px">
+            عيد ميلاد سعيد يا تولين 🌷
+        </h1>
+
+
+        <p
+            class="message"
+            style="font-size:18px"
+        >
+
+            كل عام وأنتِ بخير،
+            وعسى سنتك الجديدة تكون مليئة
+            بالأيام الجميلة،
+            والنجاحات،
+            والضحكات،
+            والأشياء التي تسعد قلبك.
+
+        </p>
+
+
+        <!-- زر النهاية في الزاوية -->
+
+        <button
+            class="btn cornerBtn"
+            onclick="reveal()"
+        >
+            اضغط هنا 🙂
+        </button>
+
+
+        <!-- الكلام الذي يظهر بعد الضغط -->
+
+        <div
+            id="final"
+            class="hidden"
+        >
+
+            <div
+                class="dua"
+                style="margin-top:25px"
+            >
+
+                انبسطي في حياتك يا الخاله 🌷
+
+                <br>
+
+                وعسى كل أيامك القادمة
+                أجمل من اللي قبلها.
+
+            </div>
+
+
+            <div
+                class="signature"
+                style="margin-top:30px"
+            >
+
+                تهنئة خاصة لكِ بمناسبة يوم ميلادك،
+
+                <br>
+
+                بكل الأمنيات الطيبة
+                لسنة جميلة ومميزة 🤍
+
+                <br><br>
+
+                <strong>
+                    عبدالرحمن
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+
+/* ========================= */
+/* التنقل بين الصفحات */
+/* ========================= */
+
+function go(n){
+
+    document
+        .querySelectorAll('.page')
+        .forEach(function(page){
+
+            page.classList.remove('active');
+
+        });
+
+
+    document
+        .getElementById('p' + n)
+        .classList.add('active');
+
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+
+
+    /* مؤثرات عند فتح الصفحات */
+
+    if(n === 2){
+
+        confetti(24);
+
+    }
+
+
+    if(n === 5){
+
+        confetti(34);
+
+    }
+
+}
+
+
+
+/* ========================= */
+/* إطفاء الشموع */
+/* ========================= */
+
+function blowCandles(){
+
+    const candles =
+        document.querySelectorAll('.candle');
+
+
+    candles.forEach(function(candle,index){
+
+        setTimeout(function(){
+
+            candle.classList.add('off');
+
+        }, index * 220);
+
+    });
+
+
+    /* تغيير نص الزر */
+
+    document
+        .getElementById('blow')
+        .textContent =
+        'انطفأت الشموع ✨';
+
+
+    /* منع الضغط مرة ثانية */
+
+    document
+        .getElementById('blow')
+        .disabled = true;
+
+
+    /* إظهار زر الانتقال */
+
+    setTimeout(function(){
+
+        document
+            .getElementById('next3')
+            .classList
+            .remove('hidden');
+
+    },800);
+
+
+    /* كونفيتي */
+
+    confetti(35);
+
+}
+
+
+
+/* ========================= */
+/* إظهار الرسالة الأخيرة */
+/* ========================= */
+
+function reveal(){
+
+    document
+        .getElementById('final')
+        .classList
+        .remove('hidden');
+
+
+    /* مؤثر احتفالي */
+
+    confetti(65);
+
+}
+
+
+
+/* ========================= */
+/* مؤثر الكونفيتي */
+/* ========================= */
+
+function confetti(n){
+
+    for(
+        let i = 0;
+        i < n;
+        i++
+    ){
+
+        const x =
+            document.createElement('div');
+
+
+        x.className =
+            'confetti';
+
+
+        /* مكان سقوط القطعة */
+
+        x.style.left =
+            Math.random() * 100 + 'vw';
+
+
+        /* سرعة السقوط */
+
+        x.style.animationDuration =
+            (2.4 + Math.random() * 2.5)
+            + 's';
+
+
+        /* تأخير بسيط */
+
+        x.style.animationDelay =
+            (Math.random() * .4)
+            + 's';
+
+
+        /* دوران عشوائي */
+
+        x.style.transform =
+            'rotate(' +
+            Math.random() * 360 +
+            'deg)';
+
+
+        /* ألوان احتفالية */
+
+        x.style.background =
+            [
+                '#ff77b7',
+                '#ffd166',
+                '#9d8cff',
+                '#69d6ff',
+                '#fff'
+            ][
+                Math.floor(
+                    Math.random() * 5
+                )
+            ];
+
+
+        document
+            .body
+            .appendChild(x);
+
+
+        /* حذف العنصر بعد انتهاء الأنميشن */
+
+        setTimeout(function(){
+
+            x.remove();
+
+        },5200);
+
+    }
+
+}
+
+
+
+/* ========================= */
+/* إنشاء النجوم */
+/* ========================= */
+
+for(
+    let i = 0;
+    i < 70;
+    i++
+){
+
+    const s =
+        document.createElement('i');
+
+
+    s.className =
+        'star';
+
+
+    /* مكان النجمة */
+
+    s.style.left =
+        Math.random() * 100 + '%';
+
+
+    s.style.top =
+        Math.random() * 100 + '%';
+
+
+    /* توقيت الوميض */
+
+    s.style.animationDelay =
+        Math.random() * 2 + 's';
+
+
+    /* سرعة مختلفة لكل نجمة */
+
+    s.style.animationDuration =
+        (1 + Math.random() * 3) + 's';
+
+
+    document
+        .getElementById('stars')
+        .appendChild(s);
+
+}
+
+</script>
+</body>
+</html>
